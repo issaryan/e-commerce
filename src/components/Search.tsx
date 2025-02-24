@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 
 export const Search = () => {
   const [query, setQuery] = useState('');
-  const navigate = useNavigate();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (query.trim()) {
-      navigate(`/search?q=${encodeURIComponent(query)}`);
-    }
+    // Implement search logic
+    console.log('Searching for:', query);
   };
 
   return (

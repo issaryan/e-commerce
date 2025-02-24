@@ -1,16 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from './ui/button';
 
 export const Footer = () => {
-  const [email, setEmail] = useState('');
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Gérer l'abonnement
-    setEmail('');
-  };
-
   return (
     <footer className="bg-background border-t">
       <div className="container mx-auto px-4 py-8">
@@ -39,18 +30,16 @@ export const Footer = () => {
           </div>
           <div>
             <h4 className="font-semibold mb-4">Newsletter</h4>
-            <form onSubmit={handleSubscribe} className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2">
               <input
                 type="email"
                 placeholder="Votre email"
                 className="p-2 border rounded text-sm"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
               />
-              <Button type="submit" className="text-sm">
+              <button className="bg-primary text-primary-foreground px-4 py-2 rounded text-sm">
                 S'abonner
-              </Button>
-            </form>
+              </button>
+            </div>
           </div>
         </div>
         <div className="border-t mt-8 pt-4 text-center text-sm text-muted-foreground">

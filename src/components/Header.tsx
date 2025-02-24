@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { Navigation } from './Navigation';
-import { Search } from './Search';
 
 export const Header = () => {
   return (
@@ -14,7 +14,13 @@ export const Header = () => {
             <Navigation />
           </div>
           <div className="flex items-center gap-4">
-            <Search />
+            <div className="relative">
+              <Input
+                type="search"
+                placeholder="Rechercher un produit..."
+                className="w-64"
+              />
+            </div>
             <div className="flex gap-2">
               <Button variant="outline" asChild>
                 <Link to="/login">Connexion</Link>
